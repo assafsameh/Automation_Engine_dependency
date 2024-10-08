@@ -1,0 +1,468 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<distributionManagement>
+		<repository>
+			<id>Automation_Engine_dependency</id>
+			<name>Automation Engine dependency</name>
+			<url>file://${project.basedir}/../../Automation_Engine_dependency</url>
+		</repository>
+	</distributionManagement>
+
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>SAMEH</groupId>
+	<artifactId>automation_engine</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<java.version>21</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<selenium-java.version>4.25.0</selenium-java.version>
+		<selenide.version>7.4.3</selenide.version>
+		<rest-assured.version>5.4.0</rest-assured.version>
+		<json-smart.version>2.5.1</json-smart.version>
+		<json-schema-validator.version>5.4.0</json-schema-validator.version>
+		<json-path.version>2.9.0</json-path.version>
+		<scribejava-apis.version>8.3.3</scribejava-apis.version>
+		<testng.version>7.10.1</testng.version>
+		<webdrivermanager.version>5.6.4</webdrivermanager.version>
+		<owner.version>1.0.12</owner.version>
+		<assertj-core.version>3.25.3</assertj-core.version>
+		<spring-context.version>6.1.6</spring-context.version>
+		<aspectjrt.version>1.9.22</aspectjrt.version>
+		<hamcrest-junit.version>2.0.0.0</hamcrest-junit.version>
+		<hamcrest.version>2.2</hamcrest.version>
+		<extentreports.version>5.1.1</extentreports.version>
+		<allure-testng.version>2.27.0</allure-testng.version>
+		<playwright.version>1.46.0</playwright.version>
+		<log4j.version>2.23.1</log4j.version>
+		<slf4j-api-api.version>2.0.13</slf4j-api-api.version>
+		<aspectj.version>1.9.19</aspectj.version>
+		<javax.mail.version>1.4.7</javax.mail.version>
+		<jakarta.mail.version>2.1.3</jakarta.mail.version>
+		<!--<ojdbc8.version>23.3.0.23.09</ojdbc8.version>-->
+		<ojdbc11.version>23.3.0.23.09</ojdbc11.version>
+		<mysql.version>8.0.33</mysql.version>
+		<com.mysql.version>8.3.0</com.mysql.version>
+		<postgresql.version>42.7.3</postgresql.version>
+		<org.mongodb.version>4.11.1</org.mongodb.version>
+		<jackson-databind.version>2.17.1</jackson-databind.version>
+		<jackson-core.version>2.17.1</jackson-core.version>
+		<karate-core.version>1.4.1</karate-core.version>
+		<json-path.version>2.9.0</json-path.version>
+		<javafaker.version>1.0.2</javafaker.version>
+		<appium.version>9.2.3</appium.version>
+		<mongodb-driver.version>4.11.1</mongodb-driver.version>
+
+		<!--<mssql-jdbc.version>11.2.3.jre18</mssql-jdbc.version>
+		 OR-->
+		<mssql-jdbc.version>8.2.1.jre11</mssql-jdbc.version>
+		<json-simple.version>1.1.1</json-simple.version>
+		<poi-ooxml.version>5.2.5</poi-ooxml.version>
+		<mongo-java-driver.version>3.12.11</mongo-java-driver.version>
+		<jsonschema2pojo-core.version>1.2.1</jsonschema2pojo-core.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>${javafaker.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-core</artifactId>
+			<version>${karate-core.version}</version>
+			<classifier>all</classifier>
+			<!--<scope>test</scope>-->
+		</dependency>
+
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${json-path.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>selenide</artifactId>
+			<version>${selenide.version}</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${webdrivermanager.version}</version>
+		</dependency>
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.hamcrest/hamcrest-junit &ndash;&gt;
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-junit</artifactId>
+			<version>${hamcrest-junit.version}</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<version>${hamcrest.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/javax.mail/mail &ndash;&gt;
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${javax.mail.version}</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/jakarta.mail/jakarta.mail-api -->
+		<dependency>
+			<groupId>jakarta.mail</groupId>
+			<artifactId>jakarta.mail-api</artifactId>
+			<version>${jakarta.mail.version}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
+		<!--<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>${ojdbc8.version}</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc11</artifactId>
+			<version>${ojdbc11.version}</version>
+		</dependency>
+
+
+
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/mysql/mysql-connector-java &ndash;&gt;
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>${com.mysql.version}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.jsonschema2pojo/jsonschema2pojo-core -->
+		<dependency>
+			<groupId>org.jsonschema2pojo</groupId>
+			<artifactId>jsonschema2pojo-core</artifactId>
+			<version>${jsonschema2pojo-core.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-sync</artifactId>
+			<version>${org.mongodb.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>${mssql-jdbc.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>${json-simple.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hamcrest</groupId>
+					<artifactId>hamcrest-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-databind.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson-core.version}</version>
+		</dependency>
+
+
+
+
+
+		<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi-ooxml.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.14.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium-java.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hamcrest</groupId>
+					<artifactId>hamcrest</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.minidev/json-smart -->
+		<dependency>
+			<groupId>net.minidev</groupId>
+			<artifactId>json-smart</artifactId>
+			<version>${json-smart.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>${json-schema-validator.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hamcrest</groupId>
+					<artifactId>hamcrest</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${json-path.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.github.scribejava/scribejava-apis -->
+		<dependency>
+			<groupId>com.github.scribejava</groupId>
+			<artifactId>scribejava-apis</artifactId>
+			<version>${scribejava-apis.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<!--  <scope>test</scope> -->
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
+		<!--dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>3.1.2</version>
+		</dependency-->
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api-api.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.aeonbits.owner/owner -->
+		<dependency>
+			<groupId>org.aeonbits.owner</groupId>
+			<artifactId>owner</artifactId>
+			<version>${owner.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj-core.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-joda-time -->
+		<!--dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-joda-time</artifactId>
+			<version>2.2.0</version>
+		</dependency-->
+
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+		<!--dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.12.5</version>
+		</dependency-->
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+		<!--dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>6.0.11</version>
+		</dependency-->
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring-context.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<!--dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>6.0.11</version>
+		</dependency-->
+
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectjrt.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.microsoft.playwright/playwright -->
+		<dependency>
+			<groupId>com.microsoft.playwright</groupId>
+			<artifactId>playwright</artifactId>
+			<version>${playwright.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentreports.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure-testng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-sync</artifactId>
+			<version>${mongodb-driver.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>${appium.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.1.3</version>
+				<configuration>
+					<altDeploymentRepository>mvn-repo::default::file://${project.basedir}/../../Automation_Engine_dependency</altDeploymentRepository>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<!--
+	distributionManagement>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://localhost:8081/repository/core_engine/</url>
+		</snapshotRepository>
+	</distributionManagement
+	-->
+</project>
